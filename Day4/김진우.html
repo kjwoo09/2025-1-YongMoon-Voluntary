@@ -1,0 +1,58 @@
+<header>
+    <h1>김진우의 블로그</h1>
+    <p>나이: 15세 | 고1</p>
+    <p>프로그래밍과 기술에 관심 많은 고등학생입니다. 더 나은 미래를 향해 공부 중!</p>
+  </header>
+
+  <div class="container" id="app">
+    <!-- 글쓰기 폼 -->
+    <div id="write-post">
+      <h2>📝 새 글 작성</h2>
+      <div class="form-group">
+        <input type="text" id="title" placeholder="제목을 입력하세요" />
+      </div>
+      <div class="form-group">
+        <textarea id="content" placeholder="내용을 입력하세요" rows="5"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="password" id="post-password" placeholder="비밀번호 (선택)" />
+      </div>
+      <button onclick="addPost()">글 작성</button>
+    </div>
+
+    <!-- 게시물 목록 -->
+    <div id="post-list">
+      <h2>📚 최근 게시물</h2>
+      <!-- 게시물들이 여기에 추가됨 -->
+    </div>
+
+    <!-- 게시물 단일 보기 -->
+    <div id="single-post" class="hidden">
+      <h2 id="single-title"></h2>
+      <div id="single-content-container">
+        <p id="single-content"></p>
+      </div>
+      <div id="edit-area" class="hidden">
+        <input type="text" id="edit-title" style="width:100%; margin-bottom:10px; padding:8px; font-size:1.1rem;" />
+        <textarea id="edit-content" rows="5" style="width:100%; padding:8px; font-size:1rem;"></textarea>
+        <div class="form-group">
+          <input type="password" id="edit-password" placeholder="비밀번호 (선택)" />
+        </div>
+        <button onclick="saveEdit()">저장</button>
+        <button onclick="cancelEdit()">취소</button>
+      </div>
+      <button class="back-button" onclick="goBack()">🔙 뒤로</button>
+      <button class="edit-button" onclick="startEdit()">✏️ 수정</button>
+      <button class="delete-button" onclick="deletePost()">🗑 삭제</button>
+      <button class="like-button" onclick="toggleLike()">❤️ <span id="like-count">0</span></button>
+
+      <div class="comment-section">
+        <h3>댓글</h3>
+        <div id="comments-list"></div>
+        <div class="comment-input-group">
+          <input type="text" id="comment-input" placeholder="댓글을 입력하세요" />
+          <button onclick="addComment()">등록</button>
+        </div>
+      </div>
+    </div>
+  </div>
